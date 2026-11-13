@@ -1,0 +1,18 @@
+Package: m6APrediction
+Title: Prediction of m6A Status Using a Random Forest Model
+Version: 1.0.0
+Authors@R: 
+    person("Runlin", "Xu", email = "Runlin.Xu24@student.xjtlu.edu.cn",
+           role = c("aut", "cre"))
+Description: Predicts m6A probabilities and statuses for single sites or
+    tables of sites using the supplied random forest model and input features.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 3.5.0)
+Imports: randomForest, stats
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+NeedsCompilation: no
+Packaged: 2026-11-13 10:23:27 UTC; runlin24
+Author: Runlin Xu [aut, cre]
+Maintainer: Runlin Xu <Runlin.Xu24@student.xjtlu.edu.cn>
