@@ -61,14 +61,16 @@ These figures reproduce Practical3_Assignment Task 2 using its imbalanced teachi
 
 ### AUROC and AUPRC
 
-- **AUROC** (area under the receiver operating characteristic curve) summarizes recall versus false-positive rate across prediction thresholds. An AUROC of 1 indicates perfect classification; 0.5 corresponds to random classification.
-- **AUPRC** (area under the precision-recall curve) summarizes precision versus recall across prediction thresholds. It is useful when evaluating imbalanced data; higher values indicate better performance, and 1 indicates perfect classification.
+The earlier `Practical3_Assignment.html`, Task 2, reports the following test-set results for the teaching classifier used for this performance illustration.
 
-Both measures summarize performance across thresholds. A final prediction threshold still needs to be chosen for the specific task, considering false positives and false negatives.
+| Metric | Reported test-set value |
+| --- | ---: |
+| AUROC | 0.8850451 |
+| AUPRC | 0.6998651 |
 
-Source: BIO215 `P3_combined.pdf`, pages 35-38. The figures above remain illustrations of the Practical 3 teaching classifier, rather than independent validation of the Practical 6 model.
+The AUROC suggests good discrimination between Positive and Negative sites. The AUPRC is approximately 0.700, very close to but slightly below the lecture's 0.7 guideline. The final prediction threshold should be selected using precision and recall, considering the costs of false positives and false negatives.
 
-
+Sources: `Practical3_Assignment.html`, Task 2, and `P3_combined.pdf`, pages 37-38. These are the earlier exercise's reported results, not a new evaluation of the model bundled in Practical 6.
 
 ## License
 
