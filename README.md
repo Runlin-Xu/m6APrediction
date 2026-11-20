@@ -51,7 +51,30 @@ The seven input features are `gc_content`, `RNA_type`, `RNA_region`, `exon_lengt
 
 A score strictly greater than `positive_threshold` is Positive; equality is Negative. These examples demonstrate software use with teaching data. They do not establish performance on new species or independent biological data.
 
-## Model performance illustration
+## Performance of the bundled Practical 6 model (OOB)
+
+The installed package model was evaluated in the school RStudio Console using its saved out-of-bag (OOB) positive-class votes and matching labels. Each site's OOB score uses trees that did not train on that site. The original model was not retrained.
+
+| Metric | OOB value |
+| --- | ---: |
+| AUROC | 0.8872636 |
+| AUPRC | 0.7022256 |
+
+The evaluation contains 48,055 sites: 11,248 Positive and 36,807 Negative (23.4% Positive). AUROC indicates good discrimination between positive and negative sites. AUPRC is above the positive-class proportion, indicating useful precision-recall performance on these imbalanced teaching data. These are internal OOB estimates, not independent biological validation. A decision threshold still requires considering precision, recall and the costs of false positives and false negatives.
+
+Reproduce the Console calculation (requires precrec):
+
+```r
+library(precrec)
+m6a_installed_model <- readRDS(system.file("extdata", "rf_fit.rds",
+                                         package = "m6APrediction", mustWork = TRUE))
+m6a_oob_curves <- evalmod(scores = m6a_installed_model$votes[, "Positive"],
+                          labels = m6a_installed_model$y)
+auc(m6a_oob_curves)
+table(m6a_installed_model$y)
+```
+
+## Earlier teaching-model curves (Practical 7 illustration)
 
 ![ROC curve from the Practical 3 teaching classifier](inst/figures/ROC.png)
 
