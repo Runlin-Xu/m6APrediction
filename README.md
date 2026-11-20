@@ -59,19 +59,6 @@ A score strictly greater than `positive_threshold` is Positive; equality is Nega
 
 These figures reproduce Practical3_Assignment Task 2 using its imbalanced teaching data, an 80% training / 20% test split, seed 123 and thresholds from 0.05 to 0.95. The ROC plot shows recall against false-positive rate; the PRC plot shows precision against recall. They illustrate the earlier teaching classifier and are not an independent validation of the model bundled in Practical 6.
 
-### AUROC and AUPRC
-
-The earlier `Practical3_Assignment.html`, Task 2, reports the following test-set results for the teaching classifier used for this performance illustration.
-
-| Metric | Reported test-set value |
-| --- | ---: |
-| AUROC | 0.8850451 |
-| AUPRC | 0.6998651 |
-
-The AUROC suggests good discrimination between Positive and Negative sites. The AUPRC is approximately 0.700, very close to but slightly below the lecture's 0.7 guideline. The final prediction threshold should be selected using precision and recall, considering the costs of false positives and false negatives.
-
-Sources: `Practical3_Assignment.html`, Task 2, and `P3_combined.pdf`, pages 37-38. These are the earlier exercise's reported results, not a new evaluation of the model bundled in Practical 6.
-
 ## License
 
 MIT license. See `LICENSE` for the year and copyright holder.
